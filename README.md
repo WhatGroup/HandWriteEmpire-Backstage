@@ -442,68 +442,67 @@ enemySkillValue   |  敌人发动技能造成伤害  | int
 
 
 数据库设计
-```
-user表（用户）  
-名称              |  描述                  | 类型  
-:---:             |  :---:                 | :---:  
-id                |  主键                  | int(10)  
-account           |  登录账号              | varchar(45)  
-password          |  密码                  | varchar(100)       
-token             |  用户登录令牌          | varchar(100)    
+
+user表（用户）    
+名称              |  描述                  | 类型      
+:---:             |  :---:                 | :---:    
+id                |  主键                  | int(10)    
+account           |  登录账号              | varchar(45)    
+password          |  密码                  | varchar(100)         
+token             |  用户登录令牌          | varchar(100)      
+
+ 
+user_info表（用户信息）          
+名称                          |  描述                       | 类型    
+:---:                         |  :---:                      | :---:    
+id                            |  主键                       | int(10)    
+userName                      |  用户名                     | varchar(45)    
+portraitPath                  |  用户头像路径               | text       
+defenseValue                  |  防御点                     | int(10)        
+attackValue                   |  攻击点                     | int(10)      
+cureValue                     |  治疗点                     | int(10)      
+roleInfos                     |  角色信息                   | text      
+userLevelInfosPath            |  用户关卡数据保存的路径     | int(10)      
+userErrorWordInfosPath        |  用户错字本数据保存的路径   | int(10)      
+userId                        |  外键 user的id              | int(10)      
 
 
-user_info表（用户信息）      
-名称                          |  描述                       | 类型  
-:---:                         |  :---:                      | :---:  
-id                            |  主键                       | int(10)  
-userName                      |  用户名                     | varchar(45)  
-portraitPath                  |  用户头像路径               | text     
-defenseValue                  |  防御点                     | int(10)      
-attackValue                   |  攻击点                     | int(10)    
-cureValue                     |  治疗点                     | int(10)    
-roleInfos                     |  角色信息                   | text    
-userLevelInfosPath            |  用户关卡数据保存的路径     | int(10)    
-userErrorWordInfosPath        |  用户错字本数据保存的路径   | int(10)    
+
+role_info表（角色信息）    
+名称                          |  描述                       | 类型      
+:---:                         |  :---:                      | :---:    
+id                            |  主键                       | int(10)      
+roleName                      |  角色名称                   | varchar(45)    
+rolePortraitPath              |  角色头像地址               | text      
+roleLiHuiPath                 |  角色立绘地址               | text     
+roleType                      |  角色的类型                 | varchar(45)      
+roleIntro                     |  角色介绍                   | text      
+roleSkillDesc                 |  角色技能描述               | text    
+unlockValue                   |  解锁所需消耗的点           | int(10)      
+roleHp                        |  角色hp                     | int(10)    
+roleSkillValue                |  角色发动技能造成伤害       | int(10)    
+
+
+user_role表 （用户与角色的匹配信息）    
+名称                          |  描述                       | 类型    
+:---:                         |  :---:                      | :---:    
+id                            |  主键                       | int(10)    
 userId                        |  外键 user的id              | int(10)    
+role1                         |  用户是否选中角色1          | int(10)      
+role2                         |  用户是否选中角色2          | int(10)     
+role3                         |  用户是否选中角色3          | int(10)      
+role4                         |  用户是否选中角色4          | int(10)      
+role5                         |  用户是否选中角色5          | int(10)    
+role6                         |  用户是否选中角色6          | int(10)      
+
+role1,role2,...对应角色id    
 
 
+word表 （单词表）    
+名称                          |  描述                       | 类型    
+:---:                         |  :---:                      | :---:    
+id                            |  主键                       | int(10)    
+pinyin                        |  拼音                       | varchar(45)    
+content                       |  字                         | varchar(45)     
+detail                        |  字的解释                   | text    
 
-role_info表（角色信息）  
-名称                          |  描述                       | 类型  
-:---:                         |  :---:                      | :---:  
-id                            |  主键                       | int(10)  
-roleName                      |  角色名称                   | varchar(45)  
-rolePortraitPath              |  角色头像地址               | text    
-roleLiHuiPath                 |  角色立绘地址               | text   
-roleType                      |  角色的类型                 | varchar(45)    
-roleIntro                     |  角色介绍                   | text    
-roleSkillDesc                 |  角色技能描述               | text  
-unlockValue                   |  解锁所需消耗的点           | int(10)    
-roleHp                        |  角色hp                     | int(10)  
-roleSkillValue                |  角色发动技能造成伤害       | int(10)  
-
-
-user_role表 （用户与角色的匹配信息）  
-名称                          |  描述                       | 类型  
-:---:                         |  :---:                      | :---:  
-id                            |  主键                       | int(10)  
-userId                        |  外键 user的id              | int(10)  
-role1                         |  用户是否选中角色1          | int(10)    
-role2                         |  用户是否选中角色2          | int(10)   
-role3                         |  用户是否选中角色3          | int(10)    
-role4                         |  用户是否选中角色4          | int(10)    
-role5                         |  用户是否选中角色5          | int(10)  
-role6                         |  用户是否选中角色6          | int(10)    
-
-role1,role2,...对应角色id  
-
-
-word表 （单词表）  
-名称                          |  描述                       | 类型  
-:---:                         |  :---:                      | :---:  
-id                            |  主键                       | int(10)  
-pinyin                        |  拼音                       | varchar(45)  
-content                       |  字                         | varchar(45)   
-detail                        |  字的解释                   | text  
-
-```

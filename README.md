@@ -8,7 +8,7 @@ ps:api/config.php文件不要删除
 :---:                   |   :---:  
 api/config.php          |   连接数据库  
 sql/201806041940.sql    |   数据库导出文件  
-api/res/userLevelInfos  |   生成用户的userLevelInfosPath的初始数据  
+api/res/userLevelInfos.json  |   生成用户的userLevelInfosPath的初始数据  
 
 ### API接口
 接口                    |   描述

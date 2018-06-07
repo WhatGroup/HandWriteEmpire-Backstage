@@ -2,72 +2,72 @@
   "userLevelInfos":
     [
       {
-        "state": "ok",
+        "state": "current",
         "flag": 1,
-        "wordInfoPath": "res/levelInfo/1.json",
+        "wordInfoPath": "res/wordInfo/1.json",
         "enemyInfoPath": "res/enemyInfo/enemy1.json",
         "level": 1
       },
       {
-        "state": "current",
+        "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/2.json",
+        "wordInfoPath": "res/wordInfo/2.json",
         "enemyInfoPath": "res/enemyInfo/enemy2.json",
         "level": 2
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/3.json",
+        "wordInfoPath": "res/wordInfo/3.json",
         "enemyInfoPath": "res/enemyInfo/enemy3.json",
         "level": 3
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/4.json",
+        "wordInfoPath": "res/wordInfo/4.json",
         "enemyInfoPath": "res/enemyInfo/enemy4.json",
         "level": 4
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/5.json",
+        "wordInfoPath": "res/wordInfo/5.json",
         "enemyInfoPath": "res/enemyInfo/enemy5.json",
         "level": 5
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/6.json",
+        "wordInfoPath": "res/wordInfo/6.json",
         "enemyInfoPath": "res/enemyInfo/enemy6.json",
         "level": 6
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/7.json",
+        "wordInfoPath": "res/wordInfo/7.json",
         "enemyInfoPath": "res/enemyInfo/enemy7.json",
         "level": 7
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/8.json",
+        "wordInfoPath": "res/wordInfo/8.json",
         "enemyInfoPath": "res/enemyInfo/enemy8.json",
         "level": 8
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/9.json",
+        "wordInfoPath": "res/wordInfo/9.json",
         "enemyInfoPath": "res/enemyInfo/enemy9.json",
         "level": 9
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/10.json",
+        "wordInfoPath": "res/wordInfo/10.json",
         "enemyInfoPath": "res/enemyInfo/enemy10.json",
         "level": 10
       }

@@ -13,13 +13,13 @@ api/res/userLevelInfos  |   生成用户的userLevelInfosPath的初始数据
 ### API接口
 接口                    |   描述
 :---:                   |   :---:
-api/auth/login          |   登录
-api/auth/register       |   注册
-api/get/user_info       |   获取用户数据
-api/get/find_word       |   查字
-api/post/user_info      |   提交用户数据
-api/post/user\_level\_infos    |   提交关卡数据
-api/post/error\_word\_infos      |   提交错字本的数据
+api/auth/login.php          |   登录
+api/auth/register.php       |   注册
+api/get/user_info.php       |   获取用户数据
+api/get/find_word.php       |   查字
+api/post/user_info.php      |   提交用户数据
+api/post/user\_level\_infos.php    |   提交关卡数据
+api/post/error\_word\_infos.php      |   提交错字本的数据
 
 ### 资源目录
 路径                    |   描述
@@ -49,7 +49,7 @@ res/userErrorWordInfos/ |   存放用户错字本的数据
 ### 注册账号
 请求地址: api/auth/resgister  
 传参: 
-account ==> 账号; pwd ==> 密码  
+account ==> 账号; paw ==> 密码  
 请求示例: api/resgister?account=3115008370&pwd=123456    
 返回值:  
 > 如果注册成功，则attach的内容为token  
@@ -75,7 +75,7 @@ account ==> 账号; pwd ==> 密码
 
 ### 登录账号
 请求地址: api/auth/login    
-传参: account ==> 账号; pwd ==> 密码   
+传参: account ==> 账号; paw ==> 密码   
 请求示例: api/register?account=3115008370&pwd=123456  
 返回值: 
 
@@ -112,9 +112,9 @@ account ==> 账号; pwd ==> 密码
 account              | 账号                     | string
 userName             | 用户名                   | string
 portraitPath         | 用户头像路径             | string 
-defenseValue         | 防御点                   | int
-attackValue          | 攻击点                   | int
-cureValue            | 治疗点                   | int
+defenseValue         | 防御点                   | string
+attackValue          | 攻击点                   | string
+cureValue            | 治疗点                   | string
 roleInfos            | 角色信息                 | json
 userLevelInfosPath   | 用户关卡数据保存的路径   | string 
 userErrorWordInfosPath | 用户错字本数据保存的路径 | string
@@ -123,16 +123,16 @@ roleInfos参数
 
 参数             |  描述                  | 类型
 :---:            |  :---:                 | :---:
-state            |  是否是选中状态(0/1/2) | int
+state            |  是否是选中状态(0/1/2) | string
 roleName         |  选取的角色名称        | string
 rolePortraitPath |  角色头像地址          | string
 roleLiHuiPath    |  角色立绘地址          | stirng   
 roleType         |  角色的类型            | string
 roleIntro        |  角色介绍              | string 
 roleSkillDesc    |  角色技能描述          | string
-unlockValue      |  解锁所需消耗的点      | int
-roleHp           |  角色hp                | int
-roleSkillValue   |  角色发动技能造成伤害  | int
+unlockValue      |  解锁所需消耗的点      | string
+roleHp           |  角色hp                | string
+roleSkillValue   |  角色发动技能造成伤害  | string
 
 > 备注:   
 > state有三种状态: 0表示未解锁，1表示解锁未选中，2表示解锁并选中
@@ -282,10 +282,10 @@ detail      | 字的解释  | string
 参数    | 描述                                  | 类型
 :---:   | :---:                                 | :---
 state   | 该关卡的状态:ok/current/lock          | string
-flag    | 当前关卡获得的旗子数                  | int
+flag    | 当前关卡获得的旗子数                  | string
 wordInfoPath | 本关卡汉字数据保存的路径         | string
 enemyInfoPath| 本关卡敌人数据保存的路径         | string
-level   | 当前的关卡数                          | int
+level   | 当前的关卡数                          | string
 
 > 备注:关卡的有三种状态，current之前的关卡均为ok，之后的关卡均为lock
 
@@ -294,72 +294,72 @@ level   | 当前的关卡数                          | int
     "userLevelInfos":
     [
         {
-        "state": "ok",
+        "state": "current",
         "flag": 1,
-        "wordInfoPath": "res/levelInfo/1.json",
+        "wordInfoPath": "res/wordInfo/1.json",
         "enemyInfoPath": "res/enemyInfo/enemy1.json",
         "level": 1
       },
       {
-        "state": "current",
+        "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/2.json",
+        "wordInfoPath": "res/wordInfo/2.json",
         "enemyInfoPath": "res/enemyInfo/enemy2.json",
         "level": 2
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/3.json",
+        "wordInfoPath": "res/wordInfo/3.json",
         "enemyInfoPath": "res/enemyInfo/enemy3.json",
         "level": 3
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/4.json",
+        "wordInfoPath": "res/wordInfo/4.json",
         "enemyInfoPath": "res/enemyInfo/enemy4.json",
         "level": 4
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/5.json",
+        "wordInfoPath": "res/wordInfo/5.json",
         "enemyInfoPath": "res/enemyInfo/enemy5.json",
         "level": 5
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/6.json",
+        "wordInfoPath": "res/wordInfo/6.json",
         "enemyInfoPath": "res/enemyInfo/enemy6.json",
         "level": 6
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/7.json",
+        "wordInfoPath": "res/wordInfo/7.json",
         "enemyInfoPath": "res/enemyInfo/enemy7.json",
         "level": 7
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/8.json",
+        "wordInfoPath": "res/wordInfo/8.json",
         "enemyInfoPath": "res/enemyInfo/enemy8.json",
         "level": 8
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/9.json",
+        "wordInfoPath": "res/wordInfo/9.json",
         "enemyInfoPath": "res/enemyInfo/enemy9.json",
         "level": 9
       },
       {
         "state": "lock",
         "flag": 0,
-        "wordInfoPath": "res/levelInfo/10.json",
+        "wordInfoPath": "res/wordInfo/10.json",
         "enemyInfoPath": "res/enemyInfo/enemy10.json",
         "level": 10
       }
@@ -425,8 +425,8 @@ enemyPortraitPath |  敌人头像地址          | string
 enemyLiHuiPath    |  敌人立绘地址          | stirng   
 enemyIntro        |  敌人介绍              | string 
 enemySkillDesc    |  敌人技能描述          | string
-enemyHp           |  敌人hp                | int
-enemySkillValue   |  敌人发动技能造成伤害  | int
+enemyHp           |  敌人hp                | string
+enemySkillValue   |  敌人发动技能造成伤害  | string
 
 ```json
 {
@@ -462,8 +462,7 @@ userName                      |  用户名                     | varchar(45)
 portraitPath                  |  用户头像路径               | text         
 defenseValue                  |  防御点                     | int(10)          
 attackValue                   |  攻击点                     | int(10)        
-cureValue                     |  治疗点                     | int(10)        
-roleInfos                     |  角色信息                   | text        
+cureValue                     |  治疗点                     | int(10)            
 userLevelInfosPath            |  用户关卡数据保存的路径     | int(10)        
 userErrorWordInfosPath        |  用户错字本数据保存的路径   | int(10)        
 userId                        |  外键 user的id              | int(10)        

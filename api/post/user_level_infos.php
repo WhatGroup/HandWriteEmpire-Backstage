@@ -1,11 +1,11 @@
-<?php
+﻿<?php
     
     require '../config.php';
 
     // $json_arr=$_POST;
 
 
-    $json_str=json_encode($_POST['userLevelInfos']);
+    $json_str=$_POST['userLevelInfos'];
     
     
     $query_searchId=mysql_query("SELECT id FROM user WHERE token='{$_POST['token']}'") 
@@ -22,13 +22,11 @@
         $Path=mysql_fetch_array($query_searchPath,MYSQL_ASSOC);
         echo $Path['userLevelInfosPath'];
         $savePath='../../'.$Path['userLevelInfosPath'];
-
         //打开文件，读写模式
         $myfile=fopen($savePath, "w+");
 
-        $key_str="userLevelInfos";
         
-        $level_json='{"'.$key_str.'":'.$json_str.'}';
+        $level_json=$json_str;
 
         //覆盖原有的内容
         fwrite($myfile, $level_json);

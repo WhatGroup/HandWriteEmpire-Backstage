@@ -1,6 +1,6 @@
 汇总
 ===
-ps:api/res/userLevelInfos中的userLevelInfos.json文件不要删除  
+ps:res/userLevelInfos/userLevelInfos.json文件不要删除  
 ps:api/config.php文件不要删除
 
 ### 其他  
@@ -8,7 +8,7 @@ ps:api/config.php文件不要删除
 :---:                   |   :---:  
 api/config.php          |   连接数据库  
 sql/201806041940.sql    |   数据库导出文件  
-api/res/userLevelInfos.json  |   生成用户的userLevelInfosPath的初始数据  
+res/userLevelInfos/userLevelInfos.json  |   生成用户的userLevelInfosPath的初始数据  
 
 ### API接口
 接口                    |   描述
@@ -47,10 +47,10 @@ res/userErrorWordInfos/ |   存放用户错字本的数据
 ===
 
 ### 注册账号
-请求地址: api/auth/resgister  
+请求地址: api/auth/register.php  
 传参: 
 account ==> 账号; paw ==> 密码  
-请求示例: api/resgister?account=3115008370&pwd=123456    
+请求示例: api/auth/register.php?account=3115008370&paw=123456    
 返回值:  
 > 如果注册成功，则attach的内容为token  
 > 如果注册失败，则attach的内容为空
@@ -74,9 +74,9 @@ account ==> 账号; paw ==> 密码
 ```
 
 ### 登录账号
-请求地址: api/auth/login    
+请求地址: api/auth/login.php    
 传参: account ==> 账号; paw ==> 密码   
-请求示例: api/register?account=3115008370&pwd=123456  
+请求示例: api/auth/login.php?account=3115008370&paw=123456  
 返回值: 
 
 > 如果登录成功，则attach的内容为token  
@@ -101,9 +101,9 @@ account ==> 账号; paw ==> 密码
 ```
 
 ### 获取用户数据
-请求地址:api/get/user_info  
+请求地址:api/get/user_info.php  
 传参: token  
-请求示例:api/get/user_info?token=5816a47899b6df8004786e20ff55854c  
+请求示例:api/get/user_info.php?token=5816a47899b6df8004786e20ff55854c  
 
 返回参数说明:  
 
@@ -240,10 +240,10 @@ roleSkillValue   |  角色发动技能造成伤害  | string
 }
 ```
 ### 寻字
-请求地址:api/get/find_word  
+请求地址:api/get/find_word.php  
 传参: token,word ==>  需要查询的字  
 请求示例:  
-查找"你"字 ==> api/get/find_word?token=5816a47899b6df8004786e20ff55854c&word  = 你    
+查找"你"字 ==> api/get/find_word.php?token=5816a47899b6df8004786e20ff55854c&word  = 你    
 返回参数说明:
 
 参数        | 描述      | 类型

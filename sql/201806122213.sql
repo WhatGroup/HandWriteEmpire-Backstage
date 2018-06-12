@@ -43,17 +43,16 @@ insert  into `role_info`(`id`,`roleName`,`rolePortraitPath`,`roleLiHuiPath`,`rol
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `account` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
   `token` varchar(100) DEFAULT NULL,
-  `timeout` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`account`,`password`,`token`,`timeout`) values (94,'9','40bd001563085fc35165329ea1ff5c5ecbdbbeef','1b4c5594832a7c6a6f3594c8aace40f1c599599b',NULL),(95,'lymn','fcc70e9ff7ee033989226e8b854e7d36bbf782cc','4ab0cda49e5dde41b790d802947a5cc699c8d553',NULL),(96,'123','40bd001563085fc35165329ea1ff5c5ecbdbbeef','0d849040f6ebc263bca0c0a464039d35d066d4ed',NULL);
+insert  into `user`(`id`,`account`,`password`,`token`) values (94,'9','40bd001563085fc35165329ea1ff5c5ecbdbbeef','1b4c5594832a7c6a6f3594c8aace40f1c599599b'),(95,'lymn','fcc70e9ff7ee033989226e8b854e7d36bbf782cc','4ab0cda49e5dde41b790d802947a5cc699c8d553'),(96,'123','40bd001563085fc35165329ea1ff5c5ecbdbbeef','0d849040f6ebc263bca0c0a464039d35d066d4ed');
 
 /*Table structure for table `user_info` */
 
@@ -69,12 +68,15 @@ CREATE TABLE `user_info` (
   `userLevelInfosPath` text,
   `userErrorWordInfosPath` text,
   `userId` int(10) DEFAULT NULL,
+  `level` int(10) DEFAULT '1',
+  `correctNum` int(10) DEFAULT '0',
+  `rank` varchar(45) DEFAULT '少尉',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user_info` */
 
-insert  into `user_info`(`id`,`userName`,`portraitPath`,`defenseValue`,`attackValue`,`cureValue`,`userLevelInfosPath`,`userErrorWordInfosPath`,`userId`) values (45,'玩家','res/images/portrait/img_20180524111830.png',0,0,0,'res/userLevelInfos/userlevelInfos_2018060412475394.json','res/userErrorWordInfos/userErrorWordInfos_2018060412475394.json',94),(46,'liaominling','res/images/portrait/img_20180524111830.png',456,123,789,'res/userLevelInfos/userlevelInfos_20180526222610.json','res/userErrorWordInfos/userErrorWordInfos_2018060413195795.json',95),(47,'玩家','res/images/portrait/img_20180524111830.png',0,0,0,'res/userLevelInfos/userlevelInfos_2018060413290096.json','res/userErrorWordInfos/userErrorWordInfos_2018060413290096.json',96);
+insert  into `user_info`(`id`,`userName`,`portraitPath`,`defenseValue`,`attackValue`,`cureValue`,`userLevelInfosPath`,`userErrorWordInfosPath`,`userId`,`level`,`correctNum`,`rank`) values (45,'玩家','res/images/portrait/img_20180524111830.png',0,0,0,'res/userLevelInfos/userlevelInfos_2018060412475394.json','res/userErrorWordInfos/userErrorWordInfos_2018060412475394.json',94,1,0,'少尉'),(46,'fgfdh','res/images/portrait/img_20180524111830.png',456,456,456,'','res/userErrorWordInfos/userErrorWordInfos_2018060413195795.json',95,3,4,'中尉'),(47,'玩家','res/images/portrait/img_20180524111830.png',0,0,0,'res/userLevelInfos/userlevelInfos_2018060413290096.json','res/userErrorWordInfos/userErrorWordInfos_2018060413290096.json',96,1,0,'少尉');
 
 /*Table structure for table `user_role` */
 

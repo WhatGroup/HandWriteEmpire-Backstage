@@ -17,7 +17,7 @@
                             WHERE userId='{$row['id']}'") 
                             or die ('mysql错误！'.mysql_error());
         $Path=mysql_fetch_array($query_searchPath,MYSQL_ASSOC);
-        
+        // echo $Path['userErrorWordInfosPath'];
         $savePath='../../'.$Path['userErrorWordInfosPath'];
 
         //打开文件，读写模式

@@ -19,6 +19,8 @@
 					    attackValue='{$json_arr['attackValue']}',
 					    defenseValue='{$json_arr['defenseValue']}',
 					    cureValue='{$json_arr['cureValue']}',
+                        level='{$json_arr['level']}',
+                        correctNum='{$json_arr['correctNum']}',
 					    userLevelInfosPath='{$json_arr['userLevelInfosPath']}'
 					    WHERE userId='{$id}'";
 
@@ -29,6 +31,11 @@
     $level_count=count($json_arr['roleInfos'],0);
     for($i=0;$i<$level_count;$i++){
 
+    	// $level_index=$json_arr['roleInfos'][$i]['state'];
+    	// $role="role".($i+1);
+    	// $query_userRole="UPDATE user_role SET {$role}='{$level_index}' WHERE userId='{$id}'";
+
+    	// mysql_query($query_userRole) or die ('sql错误!'.mysql_error());
         $role_index="role".$json_arr['roleInfos'][$i]['id'];
         $level_index=$json_arr['roleInfos'][$i]['state'];
         $query_userRole="UPDATE user_role SET {$role_index}='{$level_index}' WHERE userId='{$id}'";

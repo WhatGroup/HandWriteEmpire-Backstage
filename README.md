@@ -115,6 +115,8 @@ portraitPath         | 用户头像路径             | string
 defenseValue         | 防御点                   | string
 attackValue          | 攻击点                   | string
 cureValue            | 治疗点                   | string
+level                | 等级                     | string
+correctNum           | 正确个数                 | string
 roleInfos            | 角色信息                 | json
 userLevelInfosPath   | 用户关卡数据保存的路径   | string 
 userErrorWordInfosPath | 用户错字本数据保存的路径 | string
@@ -462,7 +464,9 @@ userName                      |  用户名                     | varchar(45)
 portraitPath                  |  用户头像路径               | text         
 defenseValue                  |  防御点                     | int(10)          
 attackValue                   |  攻击点                     | int(10)        
-cureValue                     |  治疗点                     | int(10)            
+cureValue                     |  治疗点                     | int(10)
+level                         |  等级                       | varchar(45)
+correctNum                    |  正确个数                   | int(10)       
 userLevelInfosPath            |  用户关卡数据保存的路径     | int(10)        
 userErrorWordInfosPath        |  用户错字本数据保存的路径   | int(10)        
 userId                        |  外键 user的id              | int(10)        

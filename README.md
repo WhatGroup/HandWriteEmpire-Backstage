@@ -157,6 +157,8 @@ roleSkillValue   |  角色发动技能造成伤害  | string
     "attackValue": 123,
     "defenseValue": 456,
     "cureValue": 789,
+    "level":"中尉",
+    "correctNum":2,
     "roleInfos": [
         {
             "id":1,

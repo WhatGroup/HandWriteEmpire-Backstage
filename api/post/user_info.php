@@ -20,6 +20,7 @@
                             cureValue='{$json_arr['cureValue']}',
                             level='{$json_arr['level']}',
                             correctNum='{$json_arr['correctNum']}',
+                            rank='{$json_arr['rank']}',
                             userLevelInfosPath='{$json_arr['userLevelInfosPath']}'
                             WHERE userId='{$id}'";
 

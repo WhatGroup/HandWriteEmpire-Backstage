@@ -21,7 +21,7 @@
 
     //获取数据，返回json对象
     function getData($id,$account){
-        $query_userInfo=mysql_query("SELECT userName,portraitPath,attackValue,defenseValue,cureValue,level,correctNum,userLevelInfosPath,userErrorWordInfosPath FROM user_info WHERE userId='{$id}'") 
+        $query_userInfo=mysql_query("SELECT userName,portraitPath,attackValue,defenseValue,cureValue,level,correctNum,rank,userLevelInfosPath,userErrorWordInfosPath FROM user_info WHERE userId='{$id}'") 
             or die('Mysql错误！'.mysql_error());
 
     	$row1=mysql_fetch_array($query_userInfo ,MYSQL_ASSOC);
